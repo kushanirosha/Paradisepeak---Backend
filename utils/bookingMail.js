@@ -1,60 +1,80 @@
-// ✅ User booking received template
+// ✅ User booking received template (Professional)
 export const bookingReceivedTemplate = (booking) => `
-  <div style="font-family: Arial, sans-serif; color:#333; padding:20px; border:1px solid #ddd; border-radius:10px; max-width:600px; margin:auto;">
-    <h2 style="color:#28a745;">Hi ${booking.name},</h2>
-    <p>🎉 Thank you for booking <b>${booking.packageName}</b> with us.</p>
+  <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; color:#333; padding:32px 24px; border:1px solid #e2e8f0; border-radius:12px; max-width:600px; margin:20px auto; background:#ffffff; box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+    <h2 style="margin:0 0 16px; color:#1a202c; font-size:24px;">Dear ${booking.name},</h2>
+    <p style="margin:0 0 24px; font-size:16px; line-height:1.5;">
+      Thank you for your booking request for <strong>${booking.packageName}</strong>. We have successfully received your submission.
+    </p>
 
-    <div style="background:#f9f9f9; padding:15px; border-radius:8px; margin:15px 0;">
-      <p>📌 <b>Package:</b> ${booking.packageName}</p>
-      <p>👥 <b>Travelers:</b> ${booking.travelersCount}</p>
-      <p>📅 <b>Date From:</b> ${booking.dateFrom}</p>
-      <p>📅 <b>Date To:</b> ${booking.dateTo}</p>
-      <p>🟢 <b>Status:</b> New</p>
-      <p>📝 <b>Special Requests:</b> ${booking.specialRequests || "None"}</p>
+    <div style="background:#f7fafc; padding:20px; border-radius:10px; margin:24px 0; border:1px solid #e2e8f0;">
+      <table style="width:100%; font-size:15px; line-height:1.6;">
+        <tr><td style="padding:6px 0; color:#4a5568;"><strong>Package</strong></td><td>${booking.packageName}</td></tr>
+        <tr><td style="padding:6px 0; color:#4a5568;"><strong>Number of Travelers</strong></td><td>${booking.travelersCount}</td></tr>
+        <tr><td style="padding:6px 0; color:#4a5568;"><strong>Travel Period</strong></td><td>${booking.dateFrom} – ${booking.dateTo}</td></tr>
+        <tr><td style="padding:6px 0; color:#4a5568;"><strong>Status</strong></td><td><span style="color:#28a745; font-weight:600;">Received</span></td></tr>
+        <tr><td style="padding:6px 0; color:#4a5568; vertical-align:top;"><strong>Special Requests</strong></td><td>${booking.specialRequests || "None"}</td></tr>
+      </table>
     </div>
 
-    <p style="font-size:14px; color:#555;">We will review your request and get back to you shortly.</p>
+    <p style="margin:24px 0 0; font-size:15px; color:#555555; line-height:1.5;">
+      Our team is reviewing your request and will contact you within the next 24 hours to confirm availability and next steps.
+    </p>
+    <p style="margin:16px 0 0; font-size:15px; color:#555555;">
+      We look forward to welcoming you on this journey.
+    </p>
   </div>
 `;
 
-// Admin notification template
+// Admin notification template (Professional)
 export const adminBookingTemplate = (booking) => `
-  <div style="font-family: Arial, sans-serif; color:#333; padding:20px; border:1px solid #ddd; border-radius:10px; max-width:650px; margin:auto;">
-    <h2 style="color:#0056b3;">📢 New Booking Created</h2>
-    <p>A new booking has been submitted. Details below:</p>
-    <table style="width:100%; border-collapse: collapse; font-size:14px;">
-      <tr><td><b>Name</b></td><td>${booking.name}</td></tr>
-      <tr><td><b>Email</b></td><td>${booking.email}</td></tr>
-      <tr><td><b>Phone</b></td><td>${booking.phone}</td></tr>
-      <tr><td><b>Package</b></td><td>${booking.packageName}</td></tr>
-      <tr><td><b>Travelers</b></td><td>${booking.travelersCount}</td></tr>
-      <tr><td><b>Date From</b></td><td>${booking.dateFrom}</td></tr>
-      <tr><td><b>Date To</b></td><td>${booking.dateTo}</td></tr>
-      <tr><td><b>Special Requests</b></td><td>${booking.specialRequests || "None"}</td></tr>
-      <tr><td><b>Status</b></td><td>New</td></tr>
+  <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; color:#333; padding:32px 24px; border:1px solid #e2e8f0; border-radius:12px; max-width:650px; margin:20px auto; background:#ffffff; box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+    <h2 style="margin:0 0 20px; color:#1a202c; font-size:22px; border-bottom:2px solid #3182ce; padding-bottom:8px;">New Booking Submission</h2>
+    <p style="margin:0 0 24px; font-size:16px;">
+      A new booking has been received. Please review the details below.
+    </p>
+
+    <table style="width:100%; border-collapse:collapse; font-size:15px; background:#f7fafc; border:1px solid #e2e8f0; border-radius:8px; overflow:hidden;">
+      <tr style="background:#edf2f7;"><th style="text-align:left; padding:12px 16px; color:#2d3748;">Field</th><th style="text-align:left; padding:12px 16px; color:#2d3748;">Details</th></tr>
+      <tr><td style="padding:12px 16px; color:#4a5568; border-top:1px solid #e2e8f0;"><strong>Name</strong></td><td style="padding:12px 16px; border-top:1px solid #e2e8f0;">${booking.name}</td></tr>
+      <tr><td style="padding:12px 16px; color:#4a5568; border-top:1px solid #e2e8f0;"><strong>Email</strong></td><td style="padding:12px 16px; border-top:1px solid #e2e8f0;">${booking.email}</td></tr>
+      <tr><td style="padding:12px 16px; color:#4a5568; border-top:1px solid #e2e8f0;"><strong>Phone</strong></td><td style="padding:12px 16px; border-top:1px solid #e2e8f0;">${booking.phone}</td></tr>
+      <tr><td style="padding:12px 16px; color:#4a5568; border-top:1px solid #e2e8f0;"><strong>Package</strong></td><td style="padding:12px 16px; border-top:1px solid #e2e8f0;">${booking.packageName}</td></tr>
+      <tr><td style="padding:12px 16px; color:#4a5568; border-top:1px solid #e2e8f0;"><strong>Travelers</strong></td><td style="padding:12px 16px; border-top:1px solid #e2e8f0;">${booking.travelersCount}</td></tr>
+      <tr><td style="padding:12px 16px; color:#4a5568; border-top:1px solid #e2e8f0;"><strong>Date From</strong></td><td style="padding:12px 16px; border-top:1px solid #e2e8f0;">${booking.dateFrom}</td></tr>
+      <tr><td style="padding:12px 16px; color:#4a5568; border-top:1px solid #e2e8f0;"><strong>Date To</strong></td><td style="padding:12px 16px; border-top:1px solid #e2e8f0;">${booking.dateTo}</td></tr>
+      <tr><td style="padding:12px 16px; color:#4a5568; border-top:1px solid #e2e8f0; vertical-align:top;"><strong>Special Requests</strong></td><td style="padding:12px 16px; border-top:1px solid #e2e8f0;">${booking.specialRequests || "None"}</td></tr>
+      <tr><td style="padding:12px 16px; color:#4a5568; border-top:1px solid #e2e8f0;"><strong>Status</strong></td><td style="padding:12px 16px; border-top:1px solid #e2e8f0;"><span style="color:#3182ce; font-weight:600;">New</span></td></tr>
     </table>
   </div>
 `;
 
-//  Booking Status Update Template
+// Booking Status Update Template (Professional)
 export const bookingStatusUpdateTemplate = (booking, status, internalNotes) => `
-  <div style="font-family: Arial, sans-serif; padding:20px; border:1px solid #ddd; border-radius:10px; max-width:600px; margin:auto;">
-    <h2 style="color:#0056b3;">Booking Status Update</h2>
-    <p>Hi <b>${booking.name}</b>,</p>
-    <p>Your booking for <b>${booking.packageName}</b> has been updated.</p>
+  <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; color:#333; padding:32px 24px; border:1px solid #e2e8f0; border-radius:12px; max-width:600px; margin:20px auto; background:#ffffff; box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+    <h2 style="margin:0 0 16px; color:#1a202c; font-size:24px;">Booking Status Update</h2>
+    <p style="margin:0 0 20px; font-size:16px; line-height:1.5;">
+      Dear <strong>${booking.name}</strong>,
+    </p>
+    <p style="margin:0 0 24px; font-size:16px; line-height:1.5;">
+      We are pleased to inform you that the status of your booking for <strong>${booking.packageName}</strong> has been updated.
+    </p>
 
-    <div style="background:#f9f9f9; padding:15px; border-radius:8px; margin:15px 0;">
-      <p style="margin:6px 0;">📅 <b>Date From:</b> ${booking.dateFrom}</p>
-      <p style="margin:6px 0;">📅 <b>Date To:</b> ${booking.dateTo}</p>
-      <p style="margin:6px 0;">👥 <b>Travelers:</b> ${booking.travelersCount}</p>
-      <p style="margin:6px 0;">📌 <b>Status:</b> <span style="color:green; font-weight:bold;">${status}</span></p>
-      ${internalNotes ? `<p style="margin:6px 0;">📝 <b>Internal Notes:</b> ${internalNotes}</p>` : ""}
+    <div style="background:#f7fafc; padding:20px; border-radius:10px; margin:24px 0; border:1px solid #e2e8f0;">
+      <table style="width:100%; font-size:15px; line-height:1.6;">
+        <tr><td style="padding:6px 0; color:#4a5568;"><strong>Travel Period</strong></td><td>${booking.dateFrom} – ${booking.dateTo}</td></tr>
+        <tr><td style="padding:6px 0; color:#4a5568;"><strong>Travelers</strong></td><td>${booking.travelersCount}</td></tr>
+        <tr><td style="padding:6px 0; color:#4a5568;"><strong>Current Status</strong></td><td><span style="color:#28a745; font-weight:600;">${status}</span></td></tr>
+        ${internalNotes ? `<tr><td style="padding:6px 0; color:#4a5568; vertical-align:top;"><strong>Notes</strong></td><td>${internalNotes}</td></tr>` : ""}
+      </table>
     </div>
 
-    <p style="font-size:14px; color:#555;">We’ll keep you updated on the progress. Thank you for booking with us 💙</p>
+    <p style="margin:24px 0 0; font-size:15px; color:#555555; line-height:1.5;">
+      We will continue to keep you informed of any further updates. Thank you for choosing us.
+    </p>
   </div>
 `;
-//  Booking Confirmation Email Template
+
+// Booking Confirmation Email Template (Professional)
 export const bookingConfirmationTemplate = ({
   customerName,
   packageName,
@@ -64,18 +84,26 @@ export const bookingConfirmationTemplate = ({
   travelersCount,
   specialRequests
 }) => `
-  <div style="font-family: Arial, sans-serif; color:#333; padding:20px; border:1px solid #ddd; border-radius:10px; max-width:600px; margin:auto;">
-    <h2 style="color:#28a745;">Hi ${customerName},</h2>
-    <p>Your booking for <b>${packageName}</b> is now confirmed 🎉</p>
+  <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; color:#333; padding:32px 24px; border:1px solid #e2e8f0; border-radius:12px; max-width:600px; margin:20px auto; background:#ffffff; box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+    <h2 style="margin:0 0 16px; color:#1a202c; font-size:24px;">Dear ${customerName},</h2>
+    <p style="margin:0 0 24px; font-size:16px; line-height:1.5;">
+      We are delighted to confirm your booking for <strong>${packageName}</strong>.
+    </p>
 
-    <div style="background:#f9f9f9; padding:15px; border-radius:8px; margin:15px 0;">
-      <p><b>Status:</b> ${status}</p>
-      <p><b>Date From:</b> ${dateFrom}</p>
-      <p><b>Date To:</b> ${dateTo}</p>
-      <p><b>Travelers:</b> ${travelersCount}</p>
-      <p><b>Special Requests:</b> ${specialRequests || "None"}</p>
+    <div style="background:#f0fff4; padding:20px; border-radius:10px; margin:24px 0; border:1px solid #9ae6b4;">
+      <table style="width:100%; font-size:15px; line-height:1.6;">
+        <tr><td style="padding:6px 0; color:#2d3748;"><strong>Status</strong></td><td><span style="color:#28a745; font-weight:600;">${status}</span></td></tr>
+        <tr><td style="padding:6px 0; color:#2d3748;"><strong>Travel Dates</strong></td><td>${dateFrom} – ${dateTo}</td></tr>
+        <tr><td style="padding:6px 0; color:#2d3748;"><strong>Number of Travelers</strong></td><td>${travelersCount}</td></tr>
+        <tr><td style="padding:6px 0; color:#2d3748; vertical-align:top;"><strong>Special Requests</strong></td><td>${specialRequests || "None"}</td></tr>
+      </table>
     </div>
 
-    <p style="font-size:14px; color:#555;">We’ll keep you updated about your trip. Thanks for choosing us 💙</p>
+    <p style="margin:24px 0 0; font-size:15px; color:#555555; line-height:1.5;">
+      Your reservation is now secured. You will receive a detailed itinerary and further instructions shortly.
+    </p>
+    <p style="margin:16px 0 0; font-size:15px; color:#555555;">
+      We look forward to providing you with an exceptional travel experience.
+    </p>
   </div>
 `;
